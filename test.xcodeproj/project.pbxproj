@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0B37751E9B1F1C0080E6BF /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B37741E9B1F1C0080E6BF /* ViewController2.m */; };
+		9C0B37771E9B29830080E6BF /* insuranceorder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B37761E9B29830080E6BF /* insuranceorder@2x.png */; };
+		9C0B37791E9B29B60080E6BF /* 查询区域@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C0B37781E9B29B60080E6BF /* 查询区域@2x.png */; };
+		9C77A4FF2023067800C170F5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C77A5012023067800C170F5 /* Localizable.strings */; };
+		9CB27D911EB2E5050091C3A2 /* DAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB27D901EB2E5050091C3A2 /* DAlertController.m */; };
 		9CF4D19C1E82509700979220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4D19B1E82509700979220 /* main.m */; };
 		9CF4D19F1E82509700979220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4D19E1E82509700979220 /* AppDelegate.m */; };
 		9CF4D1A21E82509700979220 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF4D1A11E82509700979220 /* ViewController.m */; };
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C0B37731E9B1F1C0080E6BF /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		9C0B37741E9B1F1C0080E6BF /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		9C0B37761E9B29830080E6BF /* insuranceorder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "insuranceorder@2x.png"; sourceTree = "<group>"; };
+		9C0B37781E9B29B60080E6BF /* 查询区域@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "查询区域@2x.png"; sourceTree = "<group>"; };
+		9C77A5002023067800C170F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C77A503202306F800C170F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9C77A504202306F800C170F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9C77A505202306F800C170F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9CB27D8F1EB2E5050091C3A2 /* DAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAlertController.h; sourceTree = "<group>"; };
+		9CB27D901EB2E5050091C3A2 /* DAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAlertController.m; sourceTree = "<group>"; };
 		9CF4D1971E82509700979220 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF4D19B1E82509700979220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9CF4D19D1E82509700979220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,8 +120,14 @@
 				9CF4D19E1E82509700979220 /* AppDelegate.m */,
 				9CF4D1A01E82509700979220 /* ViewController.h */,
 				9CF4D1A11E82509700979220 /* ViewController.m */,
+				9C0B37731E9B1F1C0080E6BF /* ViewController2.h */,
+				9C0B37741E9B1F1C0080E6BF /* ViewController2.m */,
+				9CB27D8F1EB2E5050091C3A2 /* DAlertController.h */,
+				9CB27D901EB2E5050091C3A2 /* DAlertController.m */,
 				9CF4D1A31E82509700979220 /* Main.storyboard */,
 				9CF4D1A61E82509700979220 /* Assets.xcassets */,
+				9C0B37781E9B29B60080E6BF /* 查询区域@2x.png */,
+				9C0B37761E9B29830080E6BF /* insuranceorder@2x.png */,
 				9CF4D1A81E82509700979220 /* LaunchScreen.storyboard */,
 				9CF4D1AB1E82509700979220 /* Info.plist */,
 				9CF4D19A1E82509700979220 /* Supporting Files */,
@@ -118,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9CF4D19B1E82509700979220 /* main.m */,
+				9C77A5012023067800C170F5 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,7 +229,13 @@
 				TargetAttributes = {
 					9CF4D1961E82509700979220 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 44A5RP7BVR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9CF4D1AF1E82509700979220 = {
 						CreatedOnToolsVersion = 8.1;
@@ -228,6 +256,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 9CF4D18E1E82509700979220;
 			productRefGroup = 9CF4D1981E82509700979220 /* Products */;
@@ -247,7 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF4D1AA1E82509700979220 /* LaunchScreen.storyboard in Resources */,
+				9C77A4FF2023067800C170F5 /* Localizable.strings in Resources */,
+				9C0B37791E9B29B60080E6BF /* 查询区域@2x.png in Resources */,
 				9CF4D1A71E82509700979220 /* Assets.xcassets in Resources */,
+				9C0B37771E9B29830080E6BF /* insuranceorder@2x.png in Resources */,
 				9CF4D1A51E82509700979220 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +306,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF4D1A21E82509700979220 /* ViewController.m in Sources */,
+				9C0B37751E9B1F1C0080E6BF /* ViewController2.m in Sources */,
 				9CF4D19F1E82509700979220 /* AppDelegate.m in Sources */,
 				9CF4D19C1E82509700979220 /* main.m in Sources */,
+				9CB27D911EB2E5050091C3A2 /* DAlertController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,10 +345,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9C77A5012023067800C170F5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C77A5002023067800C170F5 /* en */,
+				9C77A505202306F800C170F5 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9CF4D1A31E82509700979220 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9CF4D1A41E82509700979220 /* Base */,
+				9C77A503202306F800C170F5 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -323,6 +367,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CF4D1A91E82509700979220 /* Base */,
+				9C77A504202306F800C170F5 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -334,6 +379,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -382,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -424,7 +471,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44A5RP7BVR;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Team.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,7 +484,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 44A5RP7BVR;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Team.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +558,7 @@
 				9CF4D1C61E82509700979220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CF4D1C71E82509700979220 /* Build configuration list for PBXNativeTarget "testTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +567,7 @@
 				9CF4D1C91E82509700979220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CF4D1CA1E82509700979220 /* Build configuration list for PBXNativeTarget "testUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +576,7 @@
 				9CF4D1CC1E82509700979220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

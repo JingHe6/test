@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^AlertBlock)(NSInteger index);
+
 @interface DAlertController : UIAlertController
+
+@property(nonatomic, strong) AlertBlock alertBlock;
+
++ (void)item:(NSString *)carNo currentController:(UIViewController *)currentController targetController:(UIViewController *)targetController;
 
 @end

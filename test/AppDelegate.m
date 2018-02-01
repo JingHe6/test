@@ -7,8 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
 
-@interface AppDelegate ()
+#define IOS10_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define IOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+#define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IOS6_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+@interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
 
@@ -16,10 +24,77 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    self.window.backgroundColor = [UIColor whiteColor];
+    if (IOS10_OR_LATER) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+    } else if (IOS8_OR_LATER){
+        //iOS 8 - iOS 10系统
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        //iOS 8.0系统以下
+        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    }
+    [application registerForRemoteNotifications];
+    [self creatLocalizedUserNotification];
     return YES;
 }
+//获取DeviceToken成功
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  
+}
+//获取DeviceToken失败
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+}
+#pragma mark - iOS10 收到通知（本地和远端） UNUserNotificationCenterDelegate
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+//    completionHandler(UNNotificationPresentationOptionBadge|
+//                      UNNotificationPresentationOptionSound|
+//                      UNNotificationPresentationOptionAlert);
+    
+    
+}
 
+#pragma mark -iOS 10之前收到通知
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"iOS7及以上系统，收到通知:%@", userInfo);
+    completionHandler(UIBackgroundFetchResultNewData);
+    //此处省略一万行需求代码。。。。。。
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"iOS6及以下系统，收到通知:%@", userInfo);
+    //此处省略一万行需求代码。。。。。。
+}
+
+-(void)creatLocalizedUserNotification {
+    //设置触发条件
+    UNTimeIntervalNotificationTrigger *timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:10.0f repeats:NO];
+    UNMutableNotificationContent *content = [UNMutableNotificationContent new];
+    content.title = @"title1";
+    content.subtitle = @"subtitle";
+    content.body = @"body";
+    content.sound = [UNNotificationSound defaultSound];
+    content.userInfo = @{@"key1":@"value1",@"key2":@"value2"};
+    content.categoryIdentifier = @"Dely_locationCategory";
+    //创建通知标示
+    NSString *requestIdentifier = @"Dely.X.time";
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:requestIdentifier content:content trigger:timeTrigger];
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"推送已添加成功 %@", requestIdentifier);
+        } else {
+            NSLog(@"推送添加失败%@",[error description]);
+        }
+    }];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

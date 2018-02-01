@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController2 : UIViewController
-
+@property (nonatomic,copy) void (^MyBlock)(NSString *string);
+typedef void (^Block)(NSString *string);
 @end

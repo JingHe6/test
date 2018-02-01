@@ -8,30 +8,23 @@
 
 #import "DAlertController.h"
 
+#define APP (((AppDelegate *)[UIApplication sharedApplication].delegate))
+
 @interface DAlertController ()
 
 @end
 
 @implementation DAlertController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
++ (void)item:(NSString *)carNo currentController:(UIViewController *)currentController targetController:(UIViewController *)targetController {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@" " message:@" " preferredStyle:UIAlertControllerStyleAlert];
+    UIImageView *loadingView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 290, 177)];
+    loadingView.backgroundColor = [UIColor whiteColor];
+    loadingView.userInteractionEnabled = YES;
+    [alertController.view addSubview:loadingView];
+    
+    [currentController presentViewController:alertController animated:YES completion:^{
+    }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
