@@ -25,16 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSString *theString = @"    Hello      this  is a   long       string!   ";
-    
-    NSCharacterSet *whitespaces = [NSCharacterSet whitespaceCharacterSet];
-    NSPredicate *noEmptyStrings = [NSPredicate predicateWithFormat:@"SELF != ''"];
-    
-    NSArray *parts = [theString componentsSeparatedByCharactersInSet:whitespaces];
-    NSArray *filteredArray = [parts filteredArrayUsingPredicate:noEmptyStrings];
-    theString = [filteredArray componentsJoinedByString:@""];
-    NSLog(@"==%@",theString);
     
     NSArray *array = @[@"张三",@"李四",@"王小二",@"小王刚",@"000",@"胡小芳",@"王子"];
     NSMutableArray *arr = [NSMutableArray array];
