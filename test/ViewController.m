@@ -36,7 +36,7 @@
     theString = [filteredArray componentsJoinedByString:@""];
     NSLog(@"==%@",theString);
     
-    NSArray *array = @[@"张三",@"李四",@"王小二",@"小王刚刚",@"000",@"胡小芳",@"王子"];
+    NSArray *array = @[@"张三",@"李四",@"王小二",@"小王刚",@"000",@"胡小芳",@"王子"];
     NSMutableArray *arr = [NSMutableArray array];
     for (NSString *obj in array) {
         NSString *zm = [self transformCharacter:obj];
